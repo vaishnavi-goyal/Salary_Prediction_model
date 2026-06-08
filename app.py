@@ -3,41 +3,31 @@ import pandas as pd
 import joblib
 
 # ---------------- PAGE CONFIG ----------------
-st.set_page_config(
-    page_title="Salary Prediction System",
-    page_icon="💰",
-    layout="wide"
-)
-
-# ---------------- LOAD MODEL ----------------
-model = joblib.load("salary_model.pkl")
-encoders = joblib.load("encoders.pkl")
-
-# ---------------- CUSTOM CSS ----------------
 st.markdown("""
 <style>
 
-/* Main App Background */
-.stApp {
-    background: linear-gradient(135deg, #0f172a, #1e3a8a, #7c3aed);
+/* Main Background */
+.stApp{
+    background-color:#f4f7fc;
 }
 
 /* Sidebar */
 section[data-testid="stSidebar"]{
-    background: #081028;
+    background:#ffffff;
+    border-right:1px solid #e5e7eb;
 }
 
 /* Header */
 .title{
     text-align:center;
-    color:white;
+    color:#1e3a8a;
     font-size:55px;
     font-weight:bold;
 }
 
 .subtitle{
     text-align:center;
-    color:#e5e7eb;
+    color:#64748b;
     font-size:20px;
     margin-bottom:20px;
 }
@@ -47,7 +37,8 @@ section[data-testid="stSidebar"]{
     background:white;
     padding:20px;
     border-radius:15px;
-    box-shadow:0px 5px 15px rgba(0,0,0,0.2);
+    border:1px solid #e5e7eb;
+    box-shadow:0 4px 12px rgba(0,0,0,0.08);
 }
 
 /* Select Boxes */
@@ -55,18 +46,9 @@ section[data-testid="stSidebar"]{
     border-radius:10px;
 }
 
-/* Slider */
-.stSlider{
-    padding-top:10px;
-}
-
 /* Predict Button */
 .stButton > button{
-    background: linear-gradient(
-        90deg,
-        #4f46e5,
-        #d946ef
-    );
+    background:linear-gradient(90deg,#2563eb,#06b6d4);
     color:white;
     border:none;
     border-radius:12px;
@@ -76,25 +58,31 @@ section[data-testid="stSidebar"]{
     width:100%;
 }
 
-/* Salary Result Card */
+/* Salary Card */
 .salary-card{
-    background: linear-gradient(
-        90deg,
-        #1e1b4b,
-        #4338ca,
-        #9333ea
-    );
-    padding:40px;
+    background:linear-gradient(135deg,#2563eb,#06b6d4);
+    padding:45px;
     border-radius:20px;
     text-align:center;
     color:white;
-    box-shadow:0px 8px 25px rgba(0,0,0,0.3);
+    margin-top:20px;
+    box-shadow:0 8px 20px rgba(37,99,235,0.25);
+}
+
+.salary-card h1{
+    font-size:60px;
+    margin:10px 0;
+}
+
+.salary-card h2{
+    font-size:28px;
+    margin-bottom:10px;
 }
 
 /* Footer */
 .footer{
     text-align:center;
-    color:white;
+    color:#64748b;
     padding-top:30px;
 }
 
