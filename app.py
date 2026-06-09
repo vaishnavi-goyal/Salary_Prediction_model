@@ -214,12 +214,3 @@ if st.button("🚀 Predict Salary", use_container_width=True):
 
     st.balloons()
 
-# ---------------- FOOTER ----------------
-st.markdown(
-    """
-    <div class="footer">
-    Developed using Streamlit & Machine Learning 🚀
-    </div>
-    """,
-    unsafe_allow_html=True
-)
