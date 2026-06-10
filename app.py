@@ -16,103 +16,55 @@ encoders = joblib.load("encoders.pkl")
 # ---------------- CUSTOM CSS ----------------
 st.markdown("""
 <style>
-
-/* Main App Background */
-.stApp {
-    background: linear-gradient(135deg, #0f172a, #1e3a8a, #7c3aed);
+.main {
+    background-color: #f5f7fa;
 }
 
-/* Sidebar */
-section[data-testid="stSidebar"]{
-    background: #081028;
+.title {
+    text-align: center;
+    color: #2E86C1;
+    font-size: 45px;
+    font-weight: bold;
 }
 
-/* Header */
-.title{
+.subtitle {
+    text-align: center;
+    color: gray;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.salary-card {
+    background: linear-gradient(135deg,#2E86C1,#48C9B0);
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.footer {
     text-align:center;
-    color:white;
-    font-size:55px;
-    font-weight:bold;
-}
-
-.subtitle{
-    text-align:center;
-    color:#e5e7eb;
-    font-size:20px;
-    margin-bottom:20px;
-}
-
-/* Metric Cards */
-[data-testid="metric-container"]{
-    background:white;
-    padding:20px;
-    border-radius:15px;
-    box-shadow:0px 5px 15px rgba(0,0,0,0.2);
-}
-
-/* Select Boxes */
-.stSelectbox > div > div{
-    border-radius:10px;
-}
-
-/* Slider */
-.stSlider{
-    padding-top:10px;
-}
-
-/* Predict Button */
-.stButton > button{
-    background: linear-gradient(
-        90deg,
-        #4f46e5,
-        #d946ef
-    );
-    color:white;
-    border:none;
-    border-radius:12px;
-    height:55px;
-    font-size:18px;
-    font-weight:bold;
-    width:100%;
-}
-
-/* Salary Result Card */
-.salary-card{
-    background: linear-gradient(
-        90deg,
-        #1e1b4b,
-        #4338ca,
-        #9333ea
-    );
-    padding:40px;
-    border-radius:20px;
-    text-align:center;
-    color:white;
-    box-shadow:0px 8px 25px rgba(0,0,0,0.3);
-}
-
-/* Footer */
-.footer{
-    text-align:center;
-    color:white;
+    color:gray;
     padding-top:30px;
 }
-
 </style>
 """, unsafe_allow_html=True)
+
 # ---------------- HEADER ----------------
+st.markdown(
+    '<div class="title">💰 Job Salary Prediction System</div>',
+    unsafe_allow_html=True
+)
 
-st.markdown("""
-<div class="title">
-💰 Job Salary Prediction System
-</div>
-
-<div class="subtitle">
-Predict Employee Salary using Machine Learning
-</div>
-""", unsafe_allow_html=True)
+st.markdown(
+    '<div class="subtitle">Predict Employee Salary using Machine Learning</div>',
+    unsafe_allow_html=True
+)
 
 st.divider()
+
 # ---------------- SIDEBAR ----------------
 st.sidebar.header("📋 Enter Details")
 
@@ -214,3 +166,12 @@ if st.button("🚀 Predict Salary", use_container_width=True):
 
     st.balloons()
 
+# ---------------- FOOTER ----------------
+st.markdown(
+    """
+    <div class="footer">
+    Developed using Streamlit & Machine Learning 🚀
+    </div>
+    """,
+    unsafe_allow_html=True
+)
